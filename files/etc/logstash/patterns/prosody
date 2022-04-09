@@ -1,0 +1,1 @@
+PROSODY_LOG %{SYSLOGTIMESTAMP:timestamp} %{DATA:prosody_component}\s+%{WORD:log.level}\s+%{GREEDYDATA:log_message}
