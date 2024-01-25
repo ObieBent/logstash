@@ -13,7 +13,7 @@
         - 'main.yml'
       paths: '../vars'
 
-- include: "{{ ansible_os_family }}.yml"
+- include_tasks: "{{ ansible_os_family }}.yml"
 
 - name: main | Install package
   package:
@@ -72,14 +72,14 @@
     force: yes
   when: ls_default_path_logs != ls_path_logs
 
-- include: config.yml
+- include_tasks: config.yml
   tags:
     - config
 
-- include: firewall.yml
+- include_tasks: firewall.yml
   when: firewall_setup == True
 
-- include: script.yml
+- include_tasks: script.yml
   tags:
     - script
 
